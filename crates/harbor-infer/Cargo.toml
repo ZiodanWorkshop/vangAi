@@ -1,0 +1,19 @@
+[package]
+name = "harbor-infer"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "OpenAI-compatible inference client for Harbor"
+
+[dependencies]
+async-trait = "0.1"
+harbor-core = { path = "../harbor-core" }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["io-util", "macros", "net", "rt-multi-thread", "time"] }
+toml = "0.8"
+
+[lints]
+workspace = true

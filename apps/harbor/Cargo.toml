@@ -1,0 +1,19 @@
+[package]
+name = "harbor"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Harbor agent harness binary (Linux-focused)"
+
+[lints]
+workspace = true
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+harbor-core = { path = "../../crates/harbor-core" }
+harbor-infer = { path = "../../crates/harbor-infer" }
+harbor-sandbox-linux = { path = "../../crates/harbor-sandbox-linux" }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }

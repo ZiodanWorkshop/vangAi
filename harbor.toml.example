@@ -1,0 +1,17 @@
+default = "ollama"
+fallback = ["ollama", "openai"]
+
+[[providers]]
+id = "ollama"
+protocol = "openai-chat"
+base_url = "http://127.0.0.1:11434/v1"
+model = "llama3.2"
+context_window = 8192
+
+[[providers]]
+id = "openai"
+protocol = "openai-chat"
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+model = "gpt-4.1-mini"
+context_window = 128000
